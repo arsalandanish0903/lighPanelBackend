@@ -1,6 +1,4 @@
-const Lights = require("./model");
-const Bollards = require("./model")
-
+const { Lights, Bollards } = require("./model");
 exports.bollardsGetUser = async (req, res) => {
   try {
     const bollards = await Bollards.find();
