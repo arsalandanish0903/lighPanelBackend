@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 const app = express()
 const routers = require("./router")
 require('dotenv').config()
-
+app.use(cors())
 const port = process.env.PORT
 // ✅ Middleware to parse JSON
 app.use(express.json());
