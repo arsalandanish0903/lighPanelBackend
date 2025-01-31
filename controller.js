@@ -8,6 +8,27 @@ exports.bollardsGetUser = async (req, res) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 }
+exports.bollardsGetUserById = async (req, res) => {
+  try {
+    const {id} = req.params
+    const bollards = await Bollards.findById( id);
+    res.status(200).json({ success: true, data: bollards });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ success: false, message: "Server Error" });
+  }
+}
+
+exports.lightsGetUSer = async (req, res) => {
+  try {
+    const {id} = req.params
+    const light = await Lights.findById(id)
+    res.status(200).json({ success: true, data: light });
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    res.status(500).json({ success: false, message: "Server Error" });
+  }
+}
 
 exports.bollardsPostUser = async (req, res) => {
   try {
