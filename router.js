@@ -38,15 +38,15 @@ router.get('/getbId1/:id', Wall1BollardsController.Wall1bollardsGetById)
 
 
 // wall3
-router.get('/data1', Wall3LightController.Wall3LightsGetAll)
-router.post('/add1', Wall3LightController.Wall3postAllLights)
-router.put('/update1', Wall3LightController.Wall3updateLightsData)
-router.get('/getLightId1/:id', Wall3LightController.Wall3lightsGetById)
+router.get('/data3', Wall3LightController.Wall3LightsGetAll)
+router.post('/add3', Wall3LightController.Wall3postAllLights)
+router.put('/update3', Wall3LightController.Wall3updateLightsData)
+router.get('/getLightId3/:id', Wall3LightController.Wall3lightsGetById)
 
-router.get('/bollarddata1', Wall3BollardsController.Wall3BollardsGetAll)
-router.post('/addb1', Wall3BollardsController.Wall3bollardsPost)
-router.put('/updateB1', Wall3BollardsController.Wall3updateBollardsData)
-router.get('/getbId1/:id', Wall3BollardsController.Wall3bollardsGetById)
+router.get('/bollarddata3', Wall3BollardsController.Wall3BollardsGetAll)
+router.post('/addb3', Wall3BollardsController.Wall3bollardsPost)
+router.put('/updateB3', Wall3BollardsController.Wall3updateBollardsData)
+router.get('/getbId3/:id', Wall3BollardsController.Wall3bollardsGetById)
 // router.get('/getOrder/:id', bollardsController.GetOrder)
 // router.post('/addOrder', bollardsController.newOrder)
 
