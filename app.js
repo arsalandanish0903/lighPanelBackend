@@ -12,12 +12,16 @@ app.use(express.json());
 // ✅ Middleware to parse URL-encoded data (optional but useful)
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', routers)
-
+app.get('/', (req, res) => {
+    res.send('Hello World')
+})
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     // useCreateIndex: true
 })
+
+
 
     .then(() => {
         console.log('Connected to MongoDB');
