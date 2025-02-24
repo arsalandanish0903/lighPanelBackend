@@ -16,7 +16,12 @@ const Wall3BollardsController = require("./Controller/Wall3Controller")
 const Wall4LightController = require("./Controller/Wall4Controller")
 const Wall4BollardsController = require("./Controller/Wall4Controller")
 
+// Hybec1
 const Hybec1Controller = require("./Controller/Hybec1Controller")
+
+// Gatelight
+const GatelightController = require("./Controller/GatelightController")
+
 
 const router = express.Router()
 
@@ -71,6 +76,32 @@ router.get('/dataH1', Hybec1Controller.H1LightsGetAll)
 router.post('/addH1', Hybec1Controller.H1postAllLights)
 router.put('/updateH1', Hybec1Controller.H1updateLightsData)
 router.get('/getLightIdH1/:id', Hybec1Controller.H1lightsGetById)
+
+// Gatelight
+
+// 1. Gatelight
+router.get('/dataGl', GatelightController.GatelightGetAll)
+router.post('/addGl', GatelightController.GatelightpostAllLights)
+router.put('/updateGl', GatelightController.GatelightupdateLightsData)
+router.get('/getLightIdGl/:id', GatelightController.GatelightGetById)
+
+// 2. FootLamp
+router.get('/dataFl', GatelightController.FootLampGetAll)
+router.post('/addFl', GatelightController.FootLamppostAllLights)
+router.put('/updateFl', GatelightController.FootLampupdateLightsData)
+router.get('/getLightIdFl/:id', GatelightController.FootLampGetById)
+
+// 3. CellingLight
+router.get('/dataCl', GatelightController.CellingLightGetAll)
+router.post('/addCl', GatelightController.CellingLightpostAllLights)
+router.put('/updateCl', GatelightController.CellingLightupdateLightsData)
+router.get('/getLightIdCl/:id', GatelightController.CellingLightGetById)
+
+// 4.GardenSpike
+router.get('/dataGs', GatelightController.GardenSpikeGetAll)
+router.post('/addGs', GatelightController.GardenSpikepostAllLights)
+router.put('/updateGs', GatelightController.GardenSpikeupdateLightsData)
+router.get('/getLightIdGs/:id', GatelightController.GardenSpikeGetById)
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
 // router.post('/addOrder', bollardsController.newOrder)
