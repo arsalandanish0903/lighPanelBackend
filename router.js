@@ -12,6 +12,10 @@ const bollardsController = require("./Controller/Wall2Controller")
 const Wall3LightController = require("./Controller/Wall3Controller")
 const Wall3BollardsController = require("./Controller/Wall3Controller")
 
+// wall4
+const Wall4LightController = require("./Controller/Wall4Controller")
+const Wall4BollardsController = require("./Controller/Wall4Controller")
+
 const router = express.Router()
 
 // wall2
@@ -47,6 +51,21 @@ router.get('/bollarddata3', Wall3BollardsController.Wall3BollardsGetAll)
 router.post('/addb3', Wall3BollardsController.Wall3bollardsPost)
 router.put('/updateB3', Wall3BollardsController.Wall3updateBollardsData)
 router.get('/getbId3/:id', Wall3BollardsController.Wall3bollardsGetById)
+
+
+// wall4
+router.get('/data4', Wall4LightController.Wall4LightsGetAll)
+router.post('/add4', Wall4LightController.Wall4postAllLights)
+router.put('/update4', Wall4LightController.Wall4updateLightsData)
+router.get('/getLightId4/:id', Wall4LightController.Wall4lightsGetById)
+
+router.get('/bollarddata4', Wall4BollardsController.Wall4BollardsGetAll)
+router.post('/addb4', Wall4BollardsController.Wall4bollardsPost)
+router.put('/updateB4', Wall4BollardsController.Wall4updateBollardsData)
+router.get('/getbId4/:id', Wall4BollardsController.Wall4bollardsGetById)
+
+
+
 // router.get('/getOrder/:id', bollardsController.GetOrder)
 // router.post('/addOrder', bollardsController.newOrder)
 
