@@ -24,7 +24,7 @@ const GatelightController = require("./Controller/GatelightController")
 
 
 const router = express.Router()
-router.use(macAuthMiddleware)
+// router.use(macAuthMiddleware)
 
 // wall2
 router.get('/data', lightController.LightsGetAll)
