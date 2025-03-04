@@ -75,7 +75,7 @@ exports.FootLampGetById = async (req, res) => {
 
 exports.FootLampGetAll = async (req, res) => {
   try {
-    const lights = await FootLamp.find();
+    const lights = await FootLamp.find().sort({ sNo: 1 });;
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);
