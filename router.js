@@ -25,6 +25,9 @@ const GatelightController = require("./Controller/GatelightController")
 // Hanging1
 const Hanging1Controller = require("./Controller/Hanging1Controller")
 
+// Hanging2
+const Hanging2Controller = require("./Controller/Hanging2Controller")
+
 const router = express.Router()
 // router.use(macAuthMiddleware)
 
@@ -112,6 +115,13 @@ router.get('/dataHanging1', Hanging1Controller.Hanging1LightsGetAll)
 router.post('/addHanging1', Hanging1Controller.Hanging1postAllLights)
 router.put('/updateHanging1', Hanging1Controller.Hanging1updateLightsData)
 router.get('/getLightIdHanging1/:id', Hanging1Controller.Hanging1lightsGetById)
+
+// Hanging2
+router.get('/dataHanging2', Hanging2Controller.Hanging2LightsGetAll)
+router.post('/addHanging2', Hanging2Controller.Hanging2postAllLights)
+router.put('/updateHanging2', Hanging2Controller.Hanging2updateLightsData)
+router.get('/getLightIdHanging2/:id', Hanging2Controller.Hanging2lightsGetById)
+
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
 // router.post('/addOrder', bollardsController.newOrder)
