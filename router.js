@@ -22,6 +22,8 @@ const Hybec1Controller = require("./Controller/Hybec1Controller")
 // Gatelight
 const GatelightController = require("./Controller/GatelightController")
 
+// Hanging1
+const Hanging1Controller = require("./Controller/Hanging1Controller")
 
 const router = express.Router()
 // router.use(macAuthMiddleware)
@@ -103,6 +105,13 @@ router.get('/dataGs', GatelightController.GardenSpikeGetAll)
 router.post('/addGs', GatelightController.GardenSpikepostAllLights)
 router.put('/updateGs', GatelightController.GardenSpikeupdateLightsData)
 router.get('/getLightIdGs/:id', GatelightController.GardenSpikeGetById)
+
+
+// Hanging1
+router.get('/dataHanging1', Hanging1Controller.Hanging1LightsGetAll)
+router.post('/addHanging1', Hanging1Controller.Hanging1postAllLights)
+router.put('/updateHanging1', Hanging1Controller.Hanging1updateLightsData)
+router.get('/getLightIdHanging1/:id', Hanging1Controller.Hanging1lightsGetById)
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
 // router.post('/addOrder', bollardsController.newOrder)
