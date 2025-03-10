@@ -23,6 +23,9 @@ const Wall5BollardsController = require("./Controller/Wall5Controller")
 // Hybec1
 const Hybec1Controller = require("./Controller/Hybec1Controller")
 
+// Hybec2
+const Hybec2Controller = require("./Controller/Hybec2Controller")
+
 // Gatelight
 const GatelightController = require("./Controller/GatelightController")
 
@@ -97,6 +100,13 @@ router.get('/dataH1', Hybec1Controller.H1LightsGetAll)
 router.post('/addH1', Hybec1Controller.H1postAllLights)
 router.put('/updateH1', Hybec1Controller.H1updateLightsData)
 router.get('/getLightIdH1/:id', Hybec1Controller.H1lightsGetById)
+
+// Hybec2
+router.get('/dataH2', Hybec2Controller.H2LightsGetAl1)
+router.post('/addH2', Hybec2Controller.H2postAllLights)
+router.put('/updateH2', Hybec2Controller.H2updateLightsData)
+router.get('/getLightIdH2/:id', Hybec2Controller.H2lightsGetById)
+
 
 // Gatelight
 
