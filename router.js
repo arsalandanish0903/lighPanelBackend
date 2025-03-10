@@ -16,6 +16,10 @@ const Wall3BollardsController = require("./Controller/Wall3Controller")
 const Wall4LightController = require("./Controller/Wall4Controller")
 const Wall4BollardsController = require("./Controller/Wall4Controller")
 
+// wall5
+const Wall5LightController = require("./Controller/Wall5Controller")
+const Wall5BollardsController = require("./Controller/Wall5Controller")
+
 // Hybec1
 const Hybec1Controller = require("./Controller/Hybec1Controller")
 
@@ -71,6 +75,17 @@ router.get('/bollarddata4', Wall4BollardsController.Wall4BollardsGetAll)
 router.post('/addb4', Wall4BollardsController.Wall4bollardsPost)
 router.put('/updateB4', Wall4BollardsController.Wall4updateBollardsData)
 router.get('/getbId4/:id', Wall4BollardsController.Wall4bollardsGetById)
+
+// wall5
+router.get('/data5', Wall5LightController.Wall5LightsGetAll)
+router.post('/add5', Wall5LightController.Wall5postAllLights)
+router.put('/update5', Wall5LightController.Wall5updateLightsData)
+router.get('/getLightId5/:id', Wall5LightController.Wall5lightsGetById)
+
+router.get('/bollarddata5', Wall5BollardsController.Wall5BollardsGetAll)
+router.post('/addb5', Wall5BollardsController.Wall5bollardsPost)
+router.put('/updateB5', Wall5BollardsController.Wall5updateBollardsData)
+router.get('/getbId5/:id', Wall5BollardsController.Wall5bollardsGetById)
 
 // Hybec1
 router.get('/dataH1', Hybec1Controller.H1LightsGetAll)
