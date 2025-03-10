@@ -1,10 +1,10 @@
-const {Hybec2} = require("../Models/Hybec2");
+const {Nirvana1} = require("../Models/Nirvana1");
 
 
-exports.H2lightsGetById = async (req, res) => {
+exports.Nirvana1lightsGetById = async (req, res) => {
   try {
     const {id} = req.params
-    const light = await Hybec2.findById(id)
+    const light = await Nirvana1.findById(id)
     res.status(200).json({ success: true, data: light });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -18,9 +18,9 @@ exports.H2lightsGetById = async (req, res) => {
 
 
 
-exports.H2LightsGetAll = async (req, res) => {
+exports.Nirvana1LightsGetAll = async (req, res) => {
   try {
-    const lights = await Hybec2.find();
+    const lights = await Nirvana1.find();
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -28,12 +28,12 @@ exports.H2LightsGetAll = async (req, res) => {
   }
 };
 
-exports.H2postAllLights= async (req, res) => {
+exports.Nirvana1postAllLights= async (req, res) => {
   try {
     const data = req.body;
 
     // Using bracket notation to correctly access the fields with spaces
-    const result = await Hybec2.insertMany(data);
+    const result = await Nirvana1.insertMany(data);
 
     res.send({ status: true, message: 'Data Successfully Added', data: result });
 
@@ -42,7 +42,7 @@ exports.H2postAllLights= async (req, res) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 };
-exports.H2updateLightsData = async (req, res) => {
+exports.Nirvana1updateLightsData = async (req, res) => {
   try {
     const { id, ...updateData } = req.body; // Extract id separately
 
@@ -50,7 +50,7 @@ exports.H2updateLightsData = async (req, res) => {
       return res.status(400).json({ status: false, message: "User ID is required" });
     }
 
-    const result = await Hybec2.updateOne({ _id: id }, { $set: updateData });
+    const result = await Nirvana1.updateOne({ _id: id }, { $set: updateData });
 
     if (result.modifiedCount === 0) {
       return res.status(404).json({ status: false, message: "User not found or no changes made" });

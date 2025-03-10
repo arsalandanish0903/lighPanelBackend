@@ -35,6 +35,16 @@ const Hanging1Controller = require("./Controller/Hanging1Controller")
 // Hanging2
 const Hanging2Controller = require("./Controller/Hanging2Controller")
 
+// Nirvana1
+const Nirvana1Controller = require("./Controller/Nirvana1Controller")
+
+// Nirvana2
+const Nirvana2Controller = require("./Controller/Nirvana2Controller")
+
+// Philips
+const PhilipsController = require("./Controller/philipsController")
+
+
 const router = express.Router()
 // router.use(macAuthMiddleware)
 
@@ -102,7 +112,7 @@ router.put('/updateH1', Hybec1Controller.H1updateLightsData)
 router.get('/getLightIdH1/:id', Hybec1Controller.H1lightsGetById)
 
 // Hybec2
-router.get('/dataH2', Hybec2Controller.H2LightsGetAl1)
+router.get('/dataH2', Hybec2Controller.H2LightsGetAll)
 router.post('/addH2', Hybec2Controller.H2postAllLights)
 router.put('/updateH2', Hybec2Controller.H2updateLightsData)
 router.get('/getLightIdH2/:id', Hybec2Controller.H2lightsGetById)
@@ -146,6 +156,24 @@ router.get('/dataHanging2', Hanging2Controller.Hanging2LightsGetAll)
 router.post('/addHanging2', Hanging2Controller.Hanging2postAllLights)
 router.put('/updateHanging2', Hanging2Controller.Hanging2updateLightsData)
 router.get('/getLightIdHanging2/:id', Hanging2Controller.Hanging2lightsGetById)
+
+// Nirvana1
+router.get('/dataNirvana1', Nirvana1Controller.Nirvana1LightsGetAll)
+router.post('/addNirvana1', Nirvana1Controller.Nirvana1postAllLights)
+router.put('/updateNirvana1', Nirvana1Controller.Nirvana1updateLightsData)
+router.get('/getLightIdNirvana1/:id', Nirvana1Controller.Nirvana1lightsGetById)
+
+// Nirvana2
+router.get('/dataNirvana2', Nirvana2Controller.Nirvana2LightsGetAll)
+router.post('/addNirvana2', Nirvana2Controller.Nirvana2postAllLights)
+router.put('/updateNirvana2', Nirvana2Controller.Nirvana2updateLightsData)
+router.get('/getLightIdNirvana2/:id', Nirvana2Controller.Nirvana2lightsGetById)
+
+// Philips
+router.get('/dataPhilips', PhilipsController.P1LightsGetAll)
+router.post('/addPhilips', PhilipsController.P1postAllLights)
+router.put('/updatePhilips', PhilipsController.P1updateLightsData)
+router.get('/getLightIdPhilips/:id', PhilipsController.P1lightsGetById)
 
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
