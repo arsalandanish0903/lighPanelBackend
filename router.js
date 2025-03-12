@@ -49,10 +49,15 @@ const Fan1Controller = require("./Controller/Fan1Controller")
 const Fan1LightController = require("./Controller/Fan1Controller")
 const Fan1TubeLightController = require("./Controller/Fan1Controller")
 
-// Fan1
+// Fan2
 const Fan2Controller = require("./Controller/Fan2Controller")
 const Fan2LightController = require("./Controller/Fan2Controller")
 const Fan2TubeLightController = require("./Controller/Fan2Controller")
+
+// Geysers
+const G2Controller = require("./Controller/Geysers2Controller")
+const G2FilterController = require("./Controller/Geysers2Controller")
+const G2FanController = require("./Controller/Geysers2Controller")
 
 
 // Fan3
@@ -249,6 +254,22 @@ router.get('/bollarddataSC2', SC2Controller.SC2GetAll)
 router.post('/addSC2', SC2Controller.SC2Post)
 router.put('/updateSC2', SC2Controller.SC2updateBollardsData)
 router.get('/getbIdSC2/:id', SC2Controller.SC2GetById)
+
+// Geysers 2
+router.get('/dataG2', G2Controller.G2GetAll)
+router.post('/addG2', G2Controller.G2postAllLights)
+router.put('/updateG2', G2Controller.G2updateLightsData)
+router.get('/getLightIdG2/:id', G2Controller.G2GetById)
+
+router.get('/bollarddataG2Filter', G2FilterController.G2FilterGetAll)
+router.post('/addG2Filter', G2FilterController.G2FilterPost)
+router.put('/updateG2Filter', G2FilterController.G2FilterupdateBollardsData)
+router.get('/getbIdG2Filter/:id', G2FilterController.G2FilterGetById)
+
+router.get('/dataG2Fan', G2FanController.G2FanGetAll)
+router.post('/addG2Fan', G2FanController.G2FanpostAllLights)
+router.put('/updateG2Fan', G2FanController.G2FanupdateLightsData)
+router.get('/getLightIdG2Fan/:id', G2FanController.G2FanGetById)
 
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
