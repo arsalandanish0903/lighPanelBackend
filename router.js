@@ -44,6 +44,11 @@ const Nirvana2Controller = require("./Controller/Nirvana2Controller")
 // Philips
 const PhilipsController = require("./Controller/philipsController")
 
+// Fan1
+const Fan1Controller = require("./Controller/Fan1Controller")
+const Fan1LightController = require("./Controller/Fan1Controller")
+const Fan1TubeLightController = require("./Controller/Fan1Controller")
+
 // Fan3
 const Fan3Controller = require("./Controller/Fan3Controller")
 const Fan3LightController = require("./Controller/Fan3Controller")
@@ -179,6 +184,25 @@ router.get('/dataPhilips', PhilipsController.P1LightsGetAll)
 router.post('/addPhilips', PhilipsController.P1postAllLights)
 router.put('/updatePhilips', PhilipsController.P1updateLightsData)
 router.get('/getLightIdPhilips/:id', PhilipsController.P1lightsGetById)
+
+// Fan1
+router.get('/dataF1', Fan1Controller.Fan1GetAll)
+router.post('/addF1', Fan1Controller.Fan1postAllLights)
+router.put('/updateF1', Fan1Controller.Fan1updateLightsData)
+router.get('/getLightIdF1/:id', Fan1Controller.Fan1LightGetById)
+
+router.get('/bollarddataFl1', Fan1LightController.Fan1LightGetAll)
+router.post('/addFl1', Fan1Controller.Fan1LightPost)
+router.put('/updateFl1', Fan1Controller.Fan1updateLightsData)
+router.get('/getbIdFl1/:id', Fan1Controller.Fan1LightGetById)
+
+
+router.get('/dataF1T', Fan1TubeLightController.TubeLightsGetAll)
+router.post('/addF1T', Fan1TubeLightController.TubepostAllLights)
+router.put('/updateF1T', Fan1TubeLightController.TubeupdateLightsData)
+router.get('/getLightIdF1T/:id', Fan1TubeLightController.TubelightsGetById)
+
+
 
 // Fan3
 router.get('/dataF3', Fan3Controller.Fan3GetAll)
