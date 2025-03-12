@@ -8,11 +8,10 @@ exports.Fan1LightGetAll = async (req, res) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 }
-
 exports.Fan1LightGetById = async (req, res) => {
   try {
     const {id} = req.params
-    const bollards = await Fan1.findById(id);
+    const bollards = await Fan1.findById( id);
     res.status(200).json({ success: true, data: bollards });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -97,7 +96,7 @@ exports.Fan1updateLightsData = async (req, res) => {
       return res.status(400).json({ status: false, message: "User ID is required" });
     }
 
-    const result = await Fan1.updateOne({ _id: id }, { $set: updateData });
+    const result = await Fan3.updateOne({ _id: id }, { $set: updateData });
 
     if (result.modifiedCount === 0) {
       return res.status(404).json({ status: false, message: "User not found or no changes made" });

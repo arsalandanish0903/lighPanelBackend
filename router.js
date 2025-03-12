@@ -193,7 +193,7 @@ router.get('/getLightIdF1/:id', Fan1Controller.Fan1LightGetById)
 
 router.get('/bollarddataFl1', Fan1LightController.Fan1LightGetAll)
 router.post('/addFl1', Fan1Controller.Fan1LightPost)
-router.put('/updateFl1', Fan1Controller.Fan1updateLightsData)
+router.put('/updateFl1', Fan1Controller.Fan1LightupdateBollardsData)
 router.get('/getbIdFl1/:id', Fan1Controller.Fan1LightGetById)
 
 
@@ -212,7 +212,7 @@ router.get('/getLightIdF3/:id', Fan3Controller.Fan3LightGetById)
 
 router.get('/bollarddataFl3', Fan3LightController.Fan3LightGetAll)
 router.post('/addFl3', Fan3Controller.Fan3LightPost)
-router.put('/updateFl3', Fan3Controller.Fan3updateLightsData)
+router.put('/updateFl3', Fan3Controller.Fan3LightupdateBollardsData)
 router.get('/getbIdFl3/:id', Fan3Controller.Fan3LightGetById)
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
