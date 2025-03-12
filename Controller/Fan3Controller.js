@@ -11,7 +11,7 @@ exports.Fan3LightGetAll = async (req, res) => {
 exports.Fan3LightGetById = async (req, res) => {
   try {
     const {id} = req.params
-    const bollards = await Fan3Light.findById( id);
+    const bollards = await Fan3.findById( id);
     res.status(200).json({ success: true, data: bollards });
   } catch (error) {
     console.error("Error fetching data:", error);
