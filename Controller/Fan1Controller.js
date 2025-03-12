@@ -8,10 +8,11 @@ exports.Fan1LightGetAll = async (req, res) => {
     res.status(500).json({ success: false, message: "Server Error" });
   }
 }
+
 exports.Fan1LightGetById = async (req, res) => {
   try {
     const {id} = req.params
-    const bollards = await Fan1Light.findById( id);
+    const bollards = await Fan1.findById(id);
     res.status(200).json({ success: true, data: bollards });
   } catch (error) {
     console.error("Error fetching data:", error);
