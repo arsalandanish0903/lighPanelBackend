@@ -44,6 +44,11 @@ const Nirvana2Controller = require("./Controller/Nirvana2Controller")
 // Philips
 const PhilipsController = require("./Controller/philipsController")
 
+// Fan3
+const Fan3Controller = require("./Controller/Fan3Controller")
+const Fan3LightController = require("./Controller/Fan3Controller")
+
+
 
 const router = express.Router()
 // router.use(macAuthMiddleware)
@@ -175,6 +180,16 @@ router.post('/addPhilips', PhilipsController.P1postAllLights)
 router.put('/updatePhilips', PhilipsController.P1updateLightsData)
 router.get('/getLightIdPhilips/:id', PhilipsController.P1lightsGetById)
 
+// Fan3
+router.get('/dataF3', Fan3Controller.Fan3GetAll)
+router.post('/addF3', Fan3Controller.Fan3postAllLights)
+router.put('/updateF3', Fan3Controller.Fan3updateLightsData)
+router.get('/getLightIdF3/:id', Fan3Controller.Fan3LightGetById)
+
+router.get('/bollarddataFl3', Fan3LightController.Fan3LightGetAll)
+router.post('/addFl3', Fan3Controller.Fan3LightPost)
+router.put('/updateFl3', Fan3Controller.Fan3updateLightsData)
+router.get('/getbIdFl3/:id', Fan3Controller.Fan3LightGetById)
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
 // router.post('/addOrder', bollardsController.newOrder)
