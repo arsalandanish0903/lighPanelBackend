@@ -189,7 +189,7 @@ router.get('/getLightIdPhilips/:id', PhilipsController.P1lightsGetById)
 router.get('/dataF1', Fan1Controller.Fan1GetAll)
 router.post('/addF1', Fan1Controller.Fan1postAllLights)
 router.put('/updateF1', Fan1Controller.Fan1updateLightsData)
-router.get('/getLightIdF1/:id', Fan1Controller.Fan1LightGetById)
+router.get('/getLightIdF1/:id', Fan1Controller.Fan1GetById)
 
 router.get('/bollarddataFl1', Fan1LightController.Fan1LightGetAll)
 router.post('/addFl1', Fan1Controller.Fan1LightPost)
