@@ -221,7 +221,7 @@ router.get('/getbIdFl2/:id', Fan2Controller.Fan2LightGetById)
 router.get('/dataF2T', Fan2TubeLightController.TubeLightsGetAll)
 router.post('/addF2T', Fan2TubeLightController.TubepostAllLights)
 router.put('/updateF2T', Fan2TubeLightController.TubeupdateLightsData)
-router.get('/getLightIdF1T/:id', Fan2TubeLightController.TubelightsGetById)
+router.get('/getLightIdF2T/:id', Fan2TubeLightController.TubelightsGetById)
 
 
 
