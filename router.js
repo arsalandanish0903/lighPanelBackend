@@ -208,7 +208,7 @@ router.get('/getLightIdF1T/:id', Fan1TubeLightController.TubelightsGetById)
 router.get('/dataF3', Fan3Controller.Fan3GetAll)
 router.post('/addF3', Fan3Controller.Fan3postAllLights)
 router.put('/updateF3', Fan3Controller.Fan3updateLightsData)
-router.get('/getLightIdF3/:id', Fan3Controller.Fan3LightGetById)
+router.get('/getLightIdF3/:id', Fan3Controller.Fan3GetById)
 
 router.get('/bollarddataFl3', Fan3LightController.Fan3LightGetAll)
 router.post('/addFl3', Fan3Controller.Fan3LightPost)
