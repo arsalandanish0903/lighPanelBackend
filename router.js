@@ -49,6 +49,12 @@ const Fan1Controller = require("./Controller/Fan1Controller")
 const Fan1LightController = require("./Controller/Fan1Controller")
 const Fan1TubeLightController = require("./Controller/Fan1Controller")
 
+// Fan1
+const Fan2Controller = require("./Controller/Fan2Controller")
+const Fan2LightController = require("./Controller/Fan2Controller")
+const Fan2TubeLightController = require("./Controller/Fan2Controller")
+
+
 // Fan3
 const Fan3Controller = require("./Controller/Fan3Controller")
 const Fan3LightController = require("./Controller/Fan3Controller")
@@ -196,11 +202,26 @@ router.post('/addFl1', Fan1Controller.Fan1LightPost)
 router.put('/updateFl1', Fan1Controller.Fan1LightupdateBollardsData)
 router.get('/getbIdFl1/:id', Fan1Controller.Fan1LightGetById)
 
-
 router.get('/dataF1T', Fan1TubeLightController.TubeLightsGetAll)
 router.post('/addF1T', Fan1TubeLightController.TubepostAllLights)
 router.put('/updateF1T', Fan1TubeLightController.TubeupdateLightsData)
 router.get('/getLightIdF1T/:id', Fan1TubeLightController.TubelightsGetById)
+
+// Fan2
+router.get('/dataF2', Fan2Controller.Fan2GetAll)
+router.post('/addF2', Fan2Controller.Fan2postAllLights)
+router.put('/updateF2', Fan2Controller.Fan2updateLightsData)
+router.get('/getLightIdF2/:id', Fan2Controller.Fan2GetById)
+
+router.get('/bollarddataFl2', Fan2LightController.Fan2LightGetAll)
+router.post('/addFl2', Fan2Controller.Fan2LightPost)
+router.put('/updateFl2', Fan2Controller.Fan2LightupdateBollardsData)
+router.get('/getbIdFl2/:id', Fan2Controller.Fan2LightGetById)
+
+router.get('/dataF2T', Fan2TubeLightController.TubeLightsGetAll)
+router.post('/addF2T', Fan2TubeLightController.TubepostAllLights)
+router.put('/updateF2T', Fan2TubeLightController.TubeupdateLightsData)
+router.get('/getLightIdF1T/:id', Fan2TubeLightController.TubelightsGetById)
 
 
 
