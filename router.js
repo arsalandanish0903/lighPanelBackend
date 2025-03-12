@@ -59,6 +59,9 @@ const Fan2TubeLightController = require("./Controller/Fan2Controller")
 const Fan3Controller = require("./Controller/Fan3Controller")
 const Fan3LightController = require("./Controller/Fan3Controller")
 
+// SurfaceCOB
+const SC1Controller = require("./Controller/SurfaceCOBController")
+const SC2Controller = require("./Controller/SurfaceCOBController")
 
 
 const router = express.Router()
@@ -235,6 +238,18 @@ router.get('/bollarddataFl3', Fan3LightController.Fan3LightGetAll)
 router.post('/addFl3', Fan3Controller.Fan3LightPost)
 router.put('/updateFl3', Fan3Controller.Fan3LightupdateBollardsData)
 router.get('/getbIdFl3/:id', Fan3Controller.Fan3LightGetById)
+
+// SurfaceCOB
+router.get('/dataSC1', SC1Controller.SC1GetAll)
+router.post('/addSC1', SC1Controller.SC1postAllLights)
+router.put('/updateSC1', SC1Controller.SC1updateLightsData)
+router.get('/getLightIdSC1/:id', SC1Controller.SC1GetById)
+
+router.get('/bollarddataSC2', SC2Controller.SC2GetAll)
+router.post('/addSC2', SC2Controller.SC2Post)
+router.put('/updateSC2', SC2Controller.SC2updateBollardsData)
+router.get('/getbIdSC2/:id', SC2Controller.SC2GetById)
+
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
 // router.post('/addOrder', bollardsController.newOrder)
