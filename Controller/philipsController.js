@@ -20,7 +20,7 @@ exports.P1lightsGetById = async (req, res) => {
 
 exports.P1LightsGetAll = async (req, res) => {
   try {
-    const lights = await Philips.find();
+    const lights = await Philips.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

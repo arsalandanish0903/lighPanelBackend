@@ -15,7 +15,7 @@ exports.GatelightGetById = async (req, res) => {
 
 exports.GatelightGetAll = async (req, res) => {
   try {
-    const lights = await GateLight.find();
+    const lights = await GateLight.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -134,7 +134,7 @@ exports.CellingLightGetById = async (req, res) => {
 
 exports.CellingLightGetAll = async (req, res) => {
   try {
-    const lights = await CellingLight.find();
+    const lights = await CellingLight.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -195,7 +195,7 @@ exports.GardenSpikeGetById = async (req, res) => {
 
 exports.GardenSpikeGetAll = async (req, res) => {
   try {
-    const lights = await GardenSpike.find();
+    const lights = await GardenSpike.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

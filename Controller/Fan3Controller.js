@@ -1,7 +1,7 @@
 const { Fan3 , Fan3Light  } = require("../Models/Fan3");
 exports.Fan3LightGetAll = async (req, res) => {
   try {
-    const bollards = await Fan3Light.find();
+    const bollards = await Fan3Light.find().sort({sNo:1});;
     res.status(200).json({ success: true, data: bollards });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -66,7 +66,7 @@ exports.Fan3LightupdateBollardsData = async (req, res) => {
 
 exports.Fan3GetAll = async (req, res) => {
   try {
-    const lights = await Fan3.find();
+    const lights = await Fan3.find().sort({sNo:1});;
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

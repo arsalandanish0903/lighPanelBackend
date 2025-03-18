@@ -1,7 +1,7 @@
 const { Wall4Light , Wall4Bollards  } = require("../Models/Wall4");
 exports.Wall4BollardsGetAll = async (req, res) => {
   try {
-    const bollards = await Wall4Bollards.find();
+    const bollards = await Wall4Bollards.find().sort({sNo:1});
     res.status(200).json({ success: true, data: bollards });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -66,7 +66,7 @@ exports.Wall4updateBollardsData = async (req, res) => {
 
 exports.Wall4LightsGetAll = async (req, res) => {
   try {
-    const lights = await Wall4Light.find();
+    const lights = await Wall4Light.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);
