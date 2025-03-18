@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 const G2schema = new mongoose.Schema(
   {
-    wallNo: { type: Number },
+    wallNo: { type: String },
     sNo: { type: Number, required: true }, // Adjusted field name
     Model: { type: String },
     Dimensions: { type: String },
@@ -22,7 +22,7 @@ const G2schema = new mongoose.Schema(
 
 const G2FilterSchema = new mongoose.Schema(
   {
-    wallNo: { type: Number },
+    wallNo: { type: String },
     sNo: { type: Number },
     Model: { type: String },
     Dimensions: { type: String },
@@ -39,7 +39,7 @@ const G2FilterSchema = new mongoose.Schema(
 
 const G2FanSchema = new mongoose.Schema(
   {
-    wallNo: { type: Number },
+    wallNo: { type: String },
     sNo: { type: Number },
     Model: { type: String },
     Dimensions: { type: String },
