@@ -3,18 +3,21 @@ const macAuthMiddleware = require("./middlewares/macAuth")
 // wall1
 const Wall1LightController = require("./Controller/Wall1Controller")
 const Wall1BollardsController = require("./Controller/Wall1Controller")
-
+const Wall1FootlampController = require("./Controller/Wall1Controller")
 // wall2
 const lightController = require("./Controller/Wall2Controller")
 const bollardsController = require("./Controller/Wall2Controller")
+const Wall2FootlampController = require("./Controller/Wall2Controller")
 
 // wall3
 const Wall3LightController = require("./Controller/Wall3Controller")
 const Wall3BollardsController = require("./Controller/Wall3Controller")
+const Wall3FootlampController = require("./Controller/Wall3Controller")
 
 // wall4
 const Wall4LightController = require("./Controller/Wall4Controller")
 const Wall4BollardsController = require("./Controller/Wall4Controller")
+const Wall4FootlampController = require("./Controller/Wall4Controller")
 
 // wall5
 const Wall5LightController = require("./Controller/Wall5Controller")
@@ -83,6 +86,11 @@ router.post('/addb', bollardsController.bollardsPost)
 router.put('/updateB', bollardsController.updateBollardsData)
 router.get('/getbId/:id', bollardsController.bollardsGetById)
 
+router.get('/Footlampdata2', Wall2FootlampController.Wall2FootlampLightsGetAll)
+router.post('/addFootlamp2', Wall2FootlampController.Wall2FootlamppostAllLights)
+router.put('/updateFootlamp2', Wall2FootlampController.Wall2FootlampupdateLightsData)
+router.get('/getFootlampId2/:id', Wall2FootlampController.Wall2FootlamplightsGetById)
+
 // wall1
 router.get('/data1', Wall1LightController.Wall1LightsGetAll)
 router.post('/add1', Wall1LightController.Wall1postAllLights)
@@ -93,6 +101,11 @@ router.get('/bollarddata1', Wall1BollardsController.Wall1BollardsGetAll)
 router.post('/addb1', Wall1BollardsController.Wall1bollardsPost)
 router.put('/updateB1', Wall1BollardsController.Wall1updateBollardsData)
 router.get('/getbId1/:id', Wall1BollardsController.Wall1bollardsGetById)
+
+router.get('/Footlampdata1', Wall1FootlampController.Wall1FootlampLightsGetAll)
+router.post('/addFootlamp1', Wall1FootlampController.Wall1FootlamppostAllLights)
+router.put('/updateFootlamp1', Wall1FootlampController.Wall1FootlampupdateLightsData)
+router.get('/getFootlampId1/:id', Wall1FootlampController.Wall1FootlamplightsGetById)
 
 
 // wall3
@@ -106,6 +119,10 @@ router.post('/addb3', Wall3BollardsController.Wall3bollardsPost)
 router.put('/updateB3', Wall3BollardsController.Wall3updateBollardsData)
 router.get('/getbId3/:id', Wall3BollardsController.Wall3bollardsGetById)
 
+router.get('/Footlampdata3', Wall3FootlampController.Wall3FootlampLightsGetAll)
+router.post('/addFootlamp3', Wall3FootlampController.Wall3FootlamppostAllLights)
+router.put('/updateFootlamp3', Wall3FootlampController.Wall3FootlampupdateLightsData)
+router.get('/getFootlampId3/:id', Wall3FootlampController.Wall3FootlamplightsGetById)
 
 // wall4
 router.get('/data4', Wall4LightController.Wall4LightsGetAll)
@@ -118,6 +135,10 @@ router.post('/addb4', Wall4BollardsController.Wall4bollardsPost)
 router.put('/updateB4', Wall4BollardsController.Wall4updateBollardsData)
 router.get('/getbId4/:id', Wall4BollardsController.Wall4bollardsGetById)
 
+router.get('/Footlampdata4', Wall4FootlampController.Wall4FootlampLightsGetAll)
+router.post('/addFootlamp4', Wall4FootlampController.Wall4FootlamppostAllLights)
+router.put('/updateFootlamp4', Wall4FootlampController.Wall4FootlampupdateLightsData)
+router.get('/getFootlampId4/:id', Wall4FootlampController.Wall4FootlamplightsGetById)
 // wall5
 router.get('/data5', Wall5LightController.Wall5LightsGetAll)
 router.post('/add5', Wall5LightController.Wall5postAllLights)
