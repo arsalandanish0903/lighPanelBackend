@@ -30,11 +30,14 @@ const getClientMAC = () => {
 const macAuthMiddleware = (req, res, next) => {
     const clientMAC = getClientMAC();
 
-    if (!clientMAC || !allowedMACs.includes(clientMAC)) {
-        return res.status(403).json({ message: "Access Denied: Unauthorized MAC Address" });
-    }
-
-    next();
+try {
+        const allowed = allowedMACs.includes(clientMAC);
+        return res.json({ allowed });
+} catch (error) {
+        console.error("Error validating MAC address:", error);
+        return res.status(500).json({ allowed: false, message: "Server Error" });
+    
+}
 };
 
 module.exports = macAuthMiddleware;
