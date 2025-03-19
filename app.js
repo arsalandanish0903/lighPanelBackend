@@ -5,8 +5,19 @@ const app = express()
 const routers = require("./router")
 const macAuthMiddleware = require("./middlewares/macAuth")
 require('dotenv').config()
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://astonishing-rolypoly-f724a2.netlify.app"
+];
+
 app.use(cors({
-    origin: "http://localhost:5173"||"https://astonishing-rolypoly-f724a2.netlify.app/", // Change this to your frontend URL
+    origin: function (origin, callback) {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
