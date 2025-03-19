@@ -6,7 +6,9 @@ const allowedMACs = [
     "04:13:7A:88:83:0E",
     "40:DE:24:41:22:86",
     "24:6A:0E:CA:2C:F2",
-    "B4:8C:9D:E8:DE:67"
+    "B4:8C:9D:E8:DE:67",//yash
+   "14:D4:24:94:A5:D9"  //devashish  
+
     // B4-8C-9D-E8-DE-67
 ];
 
