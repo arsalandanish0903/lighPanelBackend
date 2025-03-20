@@ -3,8 +3,9 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 const app = express()
 const routers = require("./router")
-const macAuthMiddleware = require("./middlewares/macAuth")
+const fingerprintAuthMiddleware = require("./middlewares/macAuth")
 require('dotenv').config()
+const Fingerprint = require("./Models/FingerPrintSchema")
 const allowedOrigins = [
     "http://localhost:5173",
     "https://astonishing-rolypoly-f724a2.netlify.app"
@@ -29,9 +30,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', routers)
 
-// app.get("/api/auth/validate-mac", macAuthMiddleware, (req, res) => {
-//     res.json({ allowed: true, message: "Access Granted: MAC Address Authorized" });
-// });
+app.get("/api/auth/validate-mac", fingerprintAuthMiddleware, (req, res) => {
+    res.json({ allowed: true, message: "Access Granted: MAC Address Authorized" });
+});
+
+app.post("/api/auth/add-fingerprint", async (req, res) => {
+    try {
+        const data = req.body;
+        const result = await Fingerprint.create(data);
+        res.send({ status: true, message: 'Data Successfully Added', data: result });
+    } catch (error) {
+        console.error("Error in adding data:", error);
+        res.status(500).json({ success: false, message: "Server Error" });
+    }
+});
 
 app.get('/', (req, res) => {
     res.send('Hello World')
@@ -49,6 +61,7 @@ mongoose.connect(process.env.MONGO_URI, {
     }).catch((error) => {
         console.error('Error connecting to MongoDB', error);
     });
+    
 app.listen(port, () => {
     console.log(`server is running on port ${port}`);
 

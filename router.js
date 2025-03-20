@@ -1,5 +1,5 @@
 const express = require("express")
-const macAuthMiddleware = require("./middlewares/macAuth")
+const fingerprintAuthMiddleware = require("./middlewares/macAuth")
 // wall1
 const Wall1LightController = require("./Controller/Wall1Controller")
 const Wall1BollardsController = require("./Controller/Wall1Controller")
@@ -73,7 +73,7 @@ const SC2Controller = require("./Controller/SurfaceCOBController")
 
 
 const router = express.Router()
-// router.use(macAuthMiddleware)
+// router.use(fingerprintAuthMiddleware)
 
 // wall2
 router.get('/data', lightController.LightsGetAll)
