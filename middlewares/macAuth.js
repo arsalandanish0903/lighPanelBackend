@@ -6,9 +6,7 @@ const allowedMACs = [
     "04:13:7A:88:83:0E",
     "40:DE:24:41:22:86",
     "24:6A:0E:CA:2C:F2",
-    "B4:8C:9D:E8:DE:67",//yash
-   "14:D4:24:94:A5:D9"  //devashish  
-
+    "B4:8C:9D:E8:DE:67"
     // B4-8C-9D-E8-DE-67
 ];
 
@@ -32,14 +30,11 @@ const getClientMAC = () => {
 const macAuthMiddleware = (req, res, next) => {
     const clientMAC = getClientMAC();
 
-try {
-        const allowed = allowedMACs.includes(clientMAC);
-        return res.json({ allowed });
-} catch (error) {
-        console.error("Error validating MAC address:", error);
-        return res.status(500).json({ allowed: false, message: "Server Error" });
-    
-}
+    if (!clientMAC || !allowedMACs.includes(clientMAC)) {
+        return res.status(403).json({ message: "Access Denied: Unauthorized MAC Address" });
+    }
+
+    next();
 };
 
 module.exports = macAuthMiddleware;

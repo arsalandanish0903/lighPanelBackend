@@ -29,9 +29,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', routers)
 
-app.get("/api/auth/validate-mac", macAuthMiddleware, (req, res) => {
-    res.json({ allowed: true, message: "Access Granted: MAC Address Authorized" });
-});
+// app.get("/api/auth/validate-mac", macAuthMiddleware, (req, res) => {
+//     res.json({ allowed: true, message: "Access Granted: MAC Address Authorized" });
+// });
 
 app.get('/', (req, res) => {
     res.send('Hello World')
