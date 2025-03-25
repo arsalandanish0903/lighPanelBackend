@@ -68,6 +68,12 @@ const Fan3LightController = require("./Controller/Fan3Controller")
 const SC1Controller = require("./Controller/SurfaceCOBController")
 const SC2Controller = require("./Controller/SurfaceCOBController")
 
+// Exhaust Fan
+const ExhaustFan1Controller = require("./Controller/ExhaustFanController")
+const ExhaustFan2Controller = require("./Controller/ExhaustFanController")
+const ExhaustFan3Controller = require("./Controller/ExhaustFanController")
+
+
 
 const router = express.Router()
 // router.use(macAuthMiddleware)
@@ -270,6 +276,23 @@ router.get('/dataG2Fan', G2FanController.G2FanGetAll)
 router.post('/addG2Fan', G2FanController.G2FanpostAllLights)
 router.put('/updateG2Fan', G2FanController.G2FanupdateLightsData)
 router.get('/getLightIdG2Fan/:id', G2FanController.G2FanGetById)
+
+// Exhaust Fan
+router.get('/dataExhaustFan1', ExhaustFan1Controller.ExhaustFan1GetAll)
+router.post('/addExhaustFan1', ExhaustFan1Controller.ExhaustFan1postAllLights)
+router.put('/updateExhaustFan1', ExhaustFan1Controller.ExhaustFan1updateLightsData)
+router.get('/getLightIdExhaustFan1/:id', ExhaustFan1Controller.ExhaustFan1GetById)
+
+router.get('/bollarddataExhaustFan2', ExhaustFan2Controller.ExhaustFan2GetAll)
+router.post('/addExhaustFan2', ExhaustFan2Controller.ExhaustFan2Post)
+router.put('/updateExhaustFan2', ExhaustFan2Controller.ExhaustFan2updateBollardsData)
+router.get('/getbIdExhaustFan2/:id', ExhaustFan2Controller.ExhaustFan2GetById)
+
+router.get('/dataExhaustFan3', ExhaustFan3Controller.ExhaustFan3GetAll)
+router.post('/addExhaustFan3', ExhaustFan3Controller.ExhaustFan3postAllLights)
+router.put('/updateExhaustFan3', ExhaustFan3Controller.ExhaustFan3updateLightsData)
+router.get('/getLightIdExhaustFan3/:id', ExhaustFan3Controller.ExhaustFan3GetById)
+
 
 
 // router.get('/getOrder/:id', bollardsController.GetOrder)
