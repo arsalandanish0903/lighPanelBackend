@@ -20,7 +20,7 @@ exports.Nirvana2lightsGetById = async (req, res) => {
 
 exports.Nirvana2LightsGetAll = async (req, res) => {
   try {
-    const lights = await Nirvana2.find();
+    const lights = await Nirvana2.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

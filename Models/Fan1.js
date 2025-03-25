@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
 
 const Fan1schema = new mongoose.Schema(
   {
-    wallNo: { type: Number },
+    wallNo: { type: String },
     sNo: { type: Number, required: true }, // Adjusted field name
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String, required: true },
     y: { type: String, required: true },
@@ -22,11 +22,11 @@ const Fan1schema = new mongoose.Schema(
 
 const Fan1LightSchema = new mongoose.Schema(
   {
-    wallNo: { type: Number },
+    wallNo: { type: String },
     sNo: { type: Number },
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String },
     y: { type: String },
@@ -39,11 +39,11 @@ const Fan1LightSchema = new mongoose.Schema(
 
 const Fan1TubeLightSchema = new mongoose.Schema(
   {
-    wallNo: { type: Number },
+    wallNo: { type: String },
     sNo: { type: Number },
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String },
     y: { type: String },

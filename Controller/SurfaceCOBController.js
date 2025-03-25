@@ -1,7 +1,7 @@
 const { SC1 , SC2  } = require("../Models/SurfaceCOB");
 exports.SC2GetAll = async (req, res) => {
   try {
-    const bollards = await SC2.find();
+    const bollards = await SC2.find().sort({sNo:1});
     res.status(200).json({ success: true, data: bollards });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -66,7 +66,7 @@ exports.SC2updateBollardsData = async (req, res) => {
 
 exports.SC1GetAll = async (req, res) => {
   try {
-    const lights = await SC1.find();
+    const lights = await SC1.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

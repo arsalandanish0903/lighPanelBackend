@@ -9,7 +9,7 @@ const Wall3Lightschema = new mongoose.Schema(
     sNo: { type: Number, required: true }, // Adjusted field name
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String, required: true },
     y: { type: String, required: true },
@@ -26,7 +26,24 @@ const Wall3BollardsSchema = new mongoose.Schema(
     sNo: { type: Number },
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
+    MRP: { type: Number },
+    x: { type: String },
+    y: { type: String },
+    width: { type: String },
+    height: { type: String },
+    // orders:[{type: mongoose.Schema.Types.ObjectId, ref: "Orders"}]
+  },
+  { timestamps: true }
+);
+
+const Wall3FootlampSchema = new mongoose.Schema(
+  {
+    wallNo: { type: Number },
+    sNo: { type: Number },
+    Model: { type: String },
+    Dimensions: { type: String },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String },
     y: { type: String },
@@ -40,5 +57,6 @@ const Wall3BollardsSchema = new mongoose.Schema(
 
 const Wall3Light = mongoose.model("Wall3Lights", Wall3Lightschema);
 const Wall3Bollards = mongoose.model("Wall3Bollards", Wall3BollardsSchema);
+const Wall3Footlamp = mongoose.model("Wall3Footlamp", Wall3FootlampSchema);
 
-module.exports = {Wall3Light , Wall3Bollards};
+module.exports = {Wall3Light , Wall3Bollards , Wall3Footlamp};

@@ -2,7 +2,7 @@ const { G2 , G2Filter, G2Fan  } = require("../Models/Geysers2");
 
 exports.G2FilterGetAll = async (req, res) => {
   try {
-    const bollards = await G2Filter.find();
+    const bollards = await G2Filter.find().sort({sNo:1});
     res.status(200).json({ success: true, data: bollards });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -67,7 +67,7 @@ exports.G2FilterupdateBollardsData = async (req, res) => {
 
 exports.G2GetAll = async (req, res) => {
   try {
-    const lights = await G2.find();
+    const lights = await G2.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -125,7 +125,7 @@ exports.G2FanGetById = async (req, res) => {
 
 exports.G2FanGetAll = async (req, res) => {
   try {
-    const lights = await G2Fan.find();
+    const lights = await G2Fan.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

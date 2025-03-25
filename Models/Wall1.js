@@ -9,7 +9,7 @@ const Wall1Lightschema = new mongoose.Schema(
     sNo: { type: Number, required: true }, // Adjusted field name
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String, required: true },
     y: { type: String, required: true },
@@ -26,7 +26,7 @@ const Wall1BollardsSchema = new mongoose.Schema(
     sNo: { type: Number },
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String },
     y: { type: String },
@@ -37,8 +37,25 @@ const Wall1BollardsSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const Wall1FootlampSchema = new mongoose.Schema(
+  {
+    wallNo: { type: Number },
+    sNo: { type: Number },
+    Model: { type: String },
+    Dimensions: { type: String },
+    ListPrice: { type: String },
+    MRP: { type: Number },
+    x: { type: String },
+    y: { type: String },
+    width: { type: String },
+    height: { type: String },
+    // orders:[{type: mongoose.Schema.Types.ObjectId, ref: "Orders"}]
+  },
+  { timestamps: true }
+);
 
 const Wall1Light = mongoose.model("Wall1Lights", Wall1Lightschema);
 const Wall1Bollards = mongoose.model("Wall1Bollards", Wall1BollardsSchema);
+const Wall1Footlamp = mongoose.model("Wall1Footlamp", Wall1FootlampSchema);
 
-module.exports = {Wall1Light , Wall1Bollards};
+module.exports = {Wall1Light , Wall1Bollards , Wall1Footlamp};

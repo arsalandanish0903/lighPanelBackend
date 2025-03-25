@@ -1,7 +1,7 @@
 const { Fan2 , Fan2Light , Fan2TubeLight  } = require("../Models/Fan2");
 exports.Fan2LightGetAll = async (req, res) => {
   try {
-    const bollards = await Fan2Light.find();
+    const bollards = await Fan2Light.find().sort({sNo:1});;
     res.status(200).json({ success: true, data: bollards });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -66,7 +66,7 @@ exports.Fan2LightupdateBollardsData = async (req, res) => {
 
 exports.Fan2GetAll = async (req, res) => {
   try {
-    const lights = await Fan2.find();
+    const lights = await Fan2.find().sort({sNo:1});;
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);
@@ -124,7 +124,7 @@ exports.TubelightsGetById = async (req, res) => {
 
 exports.TubeLightsGetAll = async (req, res) => {
   try {
-    const lights = await Fan2TubeLight.find();
+    const lights = await Fan2TubeLight.find().sort({sNo:1});;
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

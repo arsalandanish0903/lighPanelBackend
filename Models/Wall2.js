@@ -7,7 +7,7 @@ const WallItemSchema = new mongoose.Schema(
     sNo: { type: Number, required: true }, // Adjusted field name
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String, required: true },
     y: { type: String, required: true },
@@ -25,7 +25,7 @@ const BollardsSchema = new mongoose.Schema(
     sNo: { type: Number },
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String },
     y: { type: String },
@@ -37,7 +37,22 @@ const BollardsSchema = new mongoose.Schema(
 );
 
 
-
+const Wall2FootlampSchema = new mongoose.Schema(
+  {
+    wallNo: { type: Number },
+    sNo: { type: Number },
+    Model: { type: String },
+    Dimensions: { type: String },
+    ListPrice: { type: String },
+    MRP: { type: Number },
+    x: { type: String },
+    y: { type: String },
+    width: { type: String },
+    height: { type: String },
+    // orders:[{type: mongoose.Schema.Types.ObjectId, ref: "Orders"}]
+  },
+  { timestamps: true }
+);
 // const orderSchema = new mongoose.Schema({
 //   productId: { type: mongoose.Schema.Types.ObjectId, refPath: 'productType', required: true }, // ✅ Fixed ObjectId  username: { type: String },
 //   quantity: { type: Number },
@@ -48,6 +63,7 @@ const BollardsSchema = new mongoose.Schema(
 // Correct way to export multiple models
 const Lights = mongoose.model("Lights", WallItemSchema);
 const Bollards = mongoose.model("Bollards", BollardsSchema);
+const Wall2Footlamp = mongoose.model("Wall2Footlamp", Wall2FootlampSchema);
 
 // const Orders = mongoose.model("Orders", orderSchema);
-module.exports = { Lights,Bollards};
+module.exports = { Lights,Bollards, Wall2Footlamp };

@@ -20,7 +20,7 @@ exports.H2lightsGetById = async (req, res) => {
 
 exports.H2LightsGetAll = async (req, res) => {
   try {
-    const lights = await Hybec2.find();
+    const lights = await Hybec2.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

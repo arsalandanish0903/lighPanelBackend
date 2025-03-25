@@ -5,7 +5,8 @@ const mongoose = require("mongoose");
 
 const Nirvana1schema = new mongoose.Schema(
   {
- 
+    wallNo: { type: String },
+
     sNo: { type: Number }, // Adjusted field name
     Model: { type: String },
     Dimensions: { type: String },

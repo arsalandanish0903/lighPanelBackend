@@ -15,7 +15,7 @@ exports.Hanging2lightsGetById = async (req, res) => {
 
 exports.Hanging2LightsGetAll = async (req, res) => {
   try {
-    const lights = await Hanging2.find();
+    const lights = await Hanging2.find().sort({sNo:1});
     res.status(200).json({ success: true, data: lights });
   } catch (error) {
     console.error("Error fetching data:", error);

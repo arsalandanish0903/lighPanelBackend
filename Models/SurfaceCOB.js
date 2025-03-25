@@ -5,11 +5,11 @@ const mongoose = require("mongoose");
 
 const SC1schema = new mongoose.Schema(
   {
-    wallNo: { type: Number },
+    wallNo: { type: String },
     sNo: { type: Number, required: true }, // Adjusted field name
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String, required: true },
     y: { type: String, required: true },
@@ -22,11 +22,11 @@ const SC1schema = new mongoose.Schema(
 
 const SC2Schema = new mongoose.Schema(
   {
-    wallNo: { type: Number },
+    wallNo: { type: String },
     sNo: { type: Number },
     Model: { type: String },
     Dimensions: { type: String },
-    ListPrice: { type: Number },
+    ListPrice: { type: String },
     MRP: { type: Number },
     x: { type: String },
     y: { type: String },
