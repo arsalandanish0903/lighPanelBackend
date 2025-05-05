@@ -8,7 +8,7 @@ require('dotenv').config()
 const Fingerprint = require("./Models/FingerPrintSchema")
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://astonishing-rolypoly-f724a2.netlify.app"
+    "https://lightpanel-new.netlify.app"
 ];
 
 app.use(cors({
