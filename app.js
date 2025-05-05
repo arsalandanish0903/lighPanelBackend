@@ -26,7 +26,7 @@ const port = process.env.PORT
 // ✅ Middleware to parse JSON
 app.use(express.json());
 
-// ✅ Middleware to parse URL-encoded data (optional but useful)
+// ✅ Middleware to parse URL-encoded data (optional but useful)    
 app.use(express.urlencoded({ extended: true }));
 app.use('/api', routers)
 

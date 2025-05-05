@@ -76,6 +76,9 @@ const ExhaustFan1Controller = require("./Controller/ExhaustFanController")
 const ExhaustFan2Controller = require("./Controller/ExhaustFanController")
 const ExhaustFan3Controller = require("./Controller/ExhaustFanController")
 
+const CartController = require("./Controller/CartController");
+
+
 
 
 const router = express.Router()
@@ -313,6 +316,33 @@ router.get('/dataExhaustFan3', ExhaustFan3Controller.ExhaustFan3GetAll)
 router.post('/addExhaustFan3', ExhaustFan3Controller.ExhaustFan3postAllLights)
 router.put('/updateExhaustFan3', ExhaustFan3Controller.ExhaustFan3updateLightsData)
 router.get('/getLightIdExhaustFan3/:id', ExhaustFan3Controller.ExhaustFan3GetById)
+
+
+
+// router.post('/carts', CartController.createCartItem); // ✅ POST endpoint to save
+// router.get('/getcarts', CartController.getAllCartNames); // ✅ POST endpoint to save
+
+// router.post("/carts", CartController.createOrUpdateCartItem);
+// router.get("/getcarts", CartController.getAllCartNames);
+// router.get("/cart/:name", CartController.getCartByName); // 🔍 fetch by cart name
+// router.get("/allcarts", CartController.getAllCarts);     // 📋 fetch all full carts
+// router.delete("/cart/:name", CartController.deleteCartByName);
+
+// POST/CREATE/UPDATE
+router.post("/carts", CartController.createOrUpdateCartItem);
+
+// GET all unique cart names
+router.get("/getcarts", CartController.getAllCartNames);
+
+// ✅ GET cart by name + wall (filtered)
+router.get("/cart/:name", CartController.getCartByName);
+
+// ✅ GET all full carts (used in CartPage)
+router.get("/allcarts", CartController.getAllCarts);
+
+// DELETE cart (wall-specific)
+router.delete("/cart/:name", CartController.deleteCartByName);
+
 
 
 
