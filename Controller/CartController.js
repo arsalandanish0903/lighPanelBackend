@@ -158,25 +158,65 @@ const CartItem = require("../Models/Cart");
 
 // ✅ Create or Update Cart (per cartName + wallName)
 // Create or update wall-specific data under a cart name
+// exports.createOrUpdateCartItem = async (req, res) => {
+//   try {
+//     const { cartName, items } = req.body;
+
+//     if (!cartName || !Array.isArray(items)) {
+//       return res.status(400).json({ message: "Missing cartName or items." });
+//     }
+
+//     const existingCart = await CartItem.findOne({ cartName });
+
+//     if (existingCart) {
+//       existingCart.items = items;
+//       await existingCart.save();
+//       return res.status(200).json({ message: "Cart updated", cart: existingCart });
+//     } else {
+//       const newCart = new CartItem({ cartName, items });
+//       await newCart.save();
+//       return res.status(201).json({ message: "New cart created", cart: newCart });
+//     }
+//   } catch (error) {
+//     console.error("Save error:", error);
+//     res.status(500).json({ message: "Internal Server Error" });
+//   }
+// };
 exports.createOrUpdateCartItem = async (req, res) => {
   try {
-    const { cartName, items } = req.body;
+    const { cartName, items, address, contact } = req.body;
 
-    if (!cartName || !Array.isArray(items)) {
-      return res.status(400).json({ message: "Missing cartName or items." });
+    if (!cartName) {
+      return res.status(400).json({ message: "Missing cartName." });
     }
 
-    const existingCart = await CartItem.findOne({ cartName });
+    // Process items to ensure they have all required fields
+    const processedItems = Array.isArray(items) ? items.map(item => ({
+      Model: item.Model || '',
+      ListPrice: item.ListPrice || '',
+      Dimensions: item.Dimensions || '',
+      qty: item.qty || 1,
+      remark: item.remark || '' // Ensure remark exists
+    })) : [];
 
-    if (existingCart) {
-      existingCart.items = items;
-      await existingCart.save();
-      return res.status(200).json({ message: "Cart updated", cart: existingCart });
-    } else {
-      const newCart = new CartItem({ cartName, items });
-      await newCart.save();
-      return res.status(201).json({ message: "New cart created", cart: newCart });
-    }
+    const updateData = {
+      items: processedItems,
+      address: address || '',
+      contact: contact || '',
+      updatedAt: new Date()
+    };
+
+    const options = { upsert: true, new: true, setDefaultsOnInsert: true };
+    const cart = await CartItem.findOneAndUpdate(
+      { cartName },
+      updateData,
+      options
+    );
+
+    const status = cart ? 200 : 201;
+    const message = cart ? "Cart updated" : "New cart created";
+    res.status(status).json({ message, cart });
+    
   } catch (error) {
     console.error("Save error:", error);
     res.status(500).json({ message: "Internal Server Error" });

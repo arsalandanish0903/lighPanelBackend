@@ -319,15 +319,6 @@ router.get('/getLightIdExhaustFan3/:id', ExhaustFan3Controller.ExhaustFan3GetByI
 
 
 
-// router.post('/carts', CartController.createCartItem); // ✅ POST endpoint to save
-// router.get('/getcarts', CartController.getAllCartNames); // ✅ POST endpoint to save
-
-// router.post("/carts", CartController.createOrUpdateCartItem);
-// router.get("/getcarts", CartController.getAllCartNames);
-// router.get("/cart/:name", CartController.getCartByName); // 🔍 fetch by cart name
-// router.get("/allcarts", CartController.getAllCarts);     // 📋 fetch all full carts
-// router.delete("/cart/:name", CartController.deleteCartByName);
-
 // POST/CREATE/UPDATE
 router.post("/carts", CartController.createOrUpdateCartItem);
 
