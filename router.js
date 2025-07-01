@@ -76,6 +76,10 @@ const ExhaustFan1Controller = require("./Controller/ExhaustFanController")
 const ExhaustFan2Controller = require("./Controller/ExhaustFanController")
 const ExhaustFan3Controller = require("./Controller/ExhaustFanController")
 
+// Astberg
+const AstbergController = require("./Controller/AstbergController")
+
+//Cart
 const CartController = require("./Controller/CartController");
 
 
@@ -204,6 +208,17 @@ router.get('/dataHanging1', Hanging1Controller.Hanging1LightsGetAll)
 router.post('/addHanging1', Hanging1Controller.Hanging1postAllLights)
 router.put('/updateHanging1', Hanging1Controller.Hanging1updateLightsData)
 router.get('/getLightIdHanging1/:id', Hanging1Controller.Hanging1lightsGetById)
+
+
+
+// Astberg
+router.get('/dataAstberg', AstbergController.AstbergLightsGetAll)
+router.post('/addAstberg', AstbergController.AstbergpostAllLights)
+router.put('/updateAstberg', AstbergController.AstbergupdateLightsData)
+router.get('/getLightIdAstberg/:id', AstbergController.AstberglightsGetById)
+
+
+
 
 // Hanging2
 router.get('/dataHanging2', Hanging2Controller.Hanging2LightsGetAll)
